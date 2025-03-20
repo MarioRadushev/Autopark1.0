@@ -1,0 +1,21 @@
+﻿@model Autopark1.Models.Vehicle
+
+<h2>Add Vehicle</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Make:</label>
+        <input asp-for="Make" />
+    </div>
+    <div>
+        <label>Model:</label>
+        <input asp-for="Model" />
+    </div>
+    <div>
+        <label>Year:</label>
+        <input asp-for="Year" type="number" />
+    </div>
+    <button type="submit">Add Vehicle</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Autopark1.Models.Vehicle>
+
+<h2>Vehicles</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Model</td>
+                <td>@vehicle.Year</td>
+                <td>
+                    <form asp-action="Delete" method="post" asp-route-id="@vehicle.Id">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Add New Vehicle</a>
